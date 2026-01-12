@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Precios - Krato POS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Puse estilos inline básicos para que se vea bien al probarlo,
+         puedes moverlos a tu css/styles.css -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --highlight: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        /* Tarjetas */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .card.pro {
+            border: 2px solid var(--primary);
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card.pro::before {
+            content: "RECOMENDADO";
+            background: var(--highlight);
+            color: white;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 20px 0;
+        }
+
+        .price small {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: normal;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .cross {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .warning {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-free {
+            background: #e2e8f0;
+            color: var(--dark);
+        }
+
+        .btn-pro {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+        }
+
+        .btn-pro:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Fundadores */
+        .founders {
+            background: #1e293b;
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .founders h2 {
+            color: var(--highlight);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <header class="hero">
+            <h1>Un sistema de ventas sencillo, sin pagos mensuales</h1>
+            <p class="subtitle">
+                Funciona sin internet. Págalo una vez o úsalo gratis para siempre.
+            </p>
+        </header>
+
+
+        <div class="pricing-grid">
+
+            <!-- PLAN FREE -->
+            <div class="card">
+                <h3>🌱 Básico</h3>
+                <p class="price">$0 <small>x siempre</small></p>
+                <p style="color: #64748b;">Perfecto para validar si Krato POS es para ti.</p>
+
+                <a href="#" class="btn btn-free">Descargar Gratis</a>
+
+                <ul>
+                    <!-- Lo bueno -->
+                    <li><span class="check">✔</span> Ventas y Caja Ilimitadas</li>
+                    <li><span class="check">✔</span> Catálogo de Productos Ilimitado</li>
+
+                    <hr style="border:0; border-top:1px solid #eee; margin: 15px 0;">
+
+                    <!-- La "piedra en el zapato" (Limites intencionales) -->
+                    <li>
+                        <span class="warning">⚠️</span> Ticket con Publicidad
+                        <br><small style="color: #94a3b8; margin-left:25px;">Sale el logo de Krato POS al final</small>
+                    </li>
+                    <li>
+                        <span class="cross">✖</span> Reportes Históricos
+                        <br><small style="color: #94a3b8; margin-left:25px;">Solo puedes ver ventas de HOY</small>
+                    </li>
+                    <li><span class="cross">✖</span> Importador de Excel</li>
+                    <li><span class="cross">✖</span> Soporte Prioritario</li>
+                </ul>
+            </div>
+
+            <!-- PLAN PRO -->
+            <div class="card pro">
+                <h3>🚀 Profesional</h3>
+                <p class="price">
+                    $750 <small>MXN</small>
+                    <br><span style="font-size: 1rem; color: #ef4444; text-decoration: line-through;">$1,250 precio
+                        normal</span>
+                </p>
+                <p style="color: #64748b;">Para dueños que quieren control total.</p>
+
+                <a href="https://wa.me/528712617892?text=Quiero%20ser%20Fundador%20PRO" class="btn btn-pro">
+                    Obtener Licencia Vitalicia
+                </a>
+
+                <ul>
+                    <li><span class="check">✔</span> <strong>Todo lo del plan Básico</strong></li>
+
+                    <hr style="border:0; border-top:1px solid #eee; margin: 15px 0;">
+
+                    <!-- El Valor Real -->
+                    <li>
+                        <span class="check">✔</span> Ticket Personalizado
+                        <br><small style="color: #64748b; margin-left:25px;">Tu logo, tus reglas. Sin
+                            publicidad.</small>
+                    </li>
+                    <li>
+                        <span class="check">✔</span> Inteligencia de Negocio
+                        <br><small style="color: #64748b; margin-left:25px;">Reportes de ganancias, top productos y
+                            rangos de fecha.</small>
+                    </li>
+                    <li>
+                        <span class="check">✔</span> Migración Express
+                        <br><small style="color: #64748b; margin-left:25px;">Importamos tus productos desde Excel (o
+                            Eleventa).</small>
+                    </li>
+                    <li>
+                        <span class="check">✔</span> Soporte vía WhatsApp
+                        <br><small style="color: #64748b; margin-left:25px;">Habla directo con el desarrollador.</small>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN DE URGENCIA / FUNDADORES -->
+        <section class="founders">
+
+            <h2>Precio especial para los primeros negocios</h2>
+
+            <p style="max-width: 600px; margin: 20px auto;">
+                Este software vale más de $750. Lo sabes, lo sé. <br>
+                Pero estoy buscando mis primeros <strong>100 "Socios Fundadores"</strong> para crecer juntos.
+            </p>
+
+            <div style="display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
+                <div>
+                    <span style="font-size: 2rem;">🔒</span>
+                    <p>Licencia Vitalicia<br><small>Un solo pago para siempre</small></p>
+                </div>
+                <div>
+                    <span style="font-size: 2rem;">🗣️</span>
+                    <p>Voz y Voto<br><small>Pide funciones nuevas</small></p>
+                </div>
+                <div>
+                    <span style="font-size: 2rem;">📈</span>
+                    <p>Actualizaciones<br><small>Incluidas de por vida</small></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="text-align: center; margin-top: 50px; color: #94a3b8;">
+                © 2026 Krato POS • Hecho con código, café y 7 intentos de no rendirse.
+            </p>
+        </footer>
+
+    </main>
+</body>
+
+</html>
