@@ -60,10 +60,10 @@
             </section>
 
 
-            <a class="btn primary"
-                href="https://github.com/ELREXI2222/WebKrakenPos/releases/download/kraken-Pos-v-1.5-version-inicial/KrakePos_setup_1.5.0.exe">
-                ⬇ Descargar Krato POS v1.5.0
-            </a>
+          <a id="btn-descarga" class="btn primary" 
+           href="https://drive.google.com/file/d/1rs3G5JTTY39C2oIrzJKjN5Vcdts7DjEP/view?usp=drive_link">
+           ⬇ Descargar Krato POS v1.0.3
+        </a>
 
             <p class="note">Windows 10 / 11 • Instalador oficial</p>
         </header>
@@ -120,6 +120,19 @@
             <p>© 2025 Krato POS • Desarrollado por ELREXI2222</p>
         </footer>
     </main>
+
+            <script>
+          document.getElementById('btn-descarga').addEventListener('click', function() {
+            gtag('event', 'descarga_instalador', {
+              'event_category': 'software',
+              'event_label': 'Krato POS v1.5.0',
+              'value': 0
+            });
+            console.log('Evento de descarga enviado a GA4');
+          });
+        </script>
+
+    
 </body>
 
 </html>
