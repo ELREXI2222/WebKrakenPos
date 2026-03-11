@@ -1,5 +1,5 @@
 {
-  "version": "1.0.9",
-  "notas": "Se corrigen errores y se añade el nuevo módulo de compras. Descárgalo.",
+  "version": "1.0.11",
+  "notas": "Se puede exportar los productos a una hoja de Excel",
   "urlDescarga": "https://elrexi2222.github.io/WebKrakenPos/"
 }
