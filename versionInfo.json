@@ -1,5 +1,5 @@
 {
-  "version": "1.0.14",
-  "notas": "Corrección de error en inventario: ahora se descuentan correctamente los gramos en productos a granel. Mejoras de estabilidad y optimización de rendimiento.",
+  "version": "1.0.15",
+  "notas": "HOTFIX: Corrección crítica en el descuento de inventario para productos a granel (gramos).",
   "urlDescarga": "https://elrexi2222.github.io/WebKrakenPos/"
 }
