@@ -1,5 +1,5 @@
 {
-  "version": "1.0.13",
-  "notas": "Mejora de rendimiento: el sistema es más rápido al realizar ventas.",
+  "version": "1.0.14",
+  "notas": "Corrección de error en inventario: ahora se descuentan correctamente los gramos en productos a granel. Mejoras de estabilidad y optimización de rendimiento.",
   "urlDescarga": "https://elrexi2222.github.io/WebKrakenPos/"
 }
