@@ -1,5 +1,5 @@
 {
-  "version": "1.0.15",
-  "notas": "HOTFIX: Corrección crítica en el descuento de inventario para productos a granel (gramos).",
+  "version": "1.0.17",
+  "notas": "Nuevo modulo de redondeo para pagos en efectivo y productos a granel",
   "urlDescarga": "https://elrexi2222.github.io/WebKrakenPos/"
 }
