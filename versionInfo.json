@@ -1,5 +1,5 @@
 {
-  "version": "1.0.17",
-  "notas": "Nuevo modulo de redondeo para pagos en efectivo y productos a granel",
+  "version": "1.0.18",
+  "notas": "Mejora en Ventas: Hemos corregido una molesta alerta de error que aparecía al finalizar algunas ventas en efectivo. Ahora el redondeo de centavos funciona de manera fluida y sin interrupciones.",
   "urlDescarga": "https://elrexi2222.github.io/WebKrakenPos/"
 }
