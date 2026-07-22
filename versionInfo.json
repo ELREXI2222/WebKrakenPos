@@ -1,5 +1,5 @@
 {
-  "version": "1.0.19",
-  "notas": "Se corrigieron errores relacionados con configuraciones regionales, especialmente en países que utilizan la coma como separador decimal. También se incluyen mejoras generales de estabilidad y rendimiento.",
-  "urlDescarga": "https://elrexi2222.github.io/WebKrakenPos/"
+  "version": "1.0.21",
+  "notas": "Nueva actualización disponible. Incluye Proyección de Inventario, Reporte de Ventas por Producto, mejoras de rendimiento y mayor estabilidad.",
+  "urlDescarga": "https://sites.google.com/view/kratopos/c%C3%B3mo-actualizar-krato-pos"
 }
