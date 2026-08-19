@@ -3,7 +3,7 @@
     "Title": "Mercado Point 2",
     "ImageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdE9PXeQWIEJrnuqF90Jxoz039qNemQtdAUi9ZofRRcUzc1Ol8Rr6u2z4x1tYSZ5mxQceS60B-Yqdzxz7bh4QqGmnzzNihcrySZ3B9Ztu4_kLQ83QyasjgZm2whCyQu-GQ-kbLvWZTeZpIuDKuT4PnG9ojcCcNmRoTmIkMoi43F56vDN5WlsmYnNOzwJs/w818-h164/publicidad.jpg",
     "TargetUrl": "https://mercadolibre.com/sec/2VY1QQT",
-    "IsActive": false
+    "IsActive": 
   },
   {
     "Title": "Sigue el Canal Oficial",
@@ -21,7 +21,7 @@
     "Title": "Promocion 24 horas",
     "ImageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglzXcXRsn0PGuApCRYIHPL_ZUODGbBRTg9PYPAr-3AUgqgNtIvazo1xUSmj4LGndnmqbKQ1-EuXo6-k-Ipf5_Ltig8adnt8HwhEXCY1PU-cuPrcG8Uo1D7F4he0LYquTCIupc5_qql7ovwMhoMNYZlm8S9bDAsnsv71PDHo-KVejYM_0JIWrawHQ3n-vk/s1600/banner.png",
     "TargetUrl": "https://sites.google.com/view/kratopos/buy-now",
-    "IsActive": true
+    "IsActive": false
   }
 
   
