@@ -1,6 +1,6 @@
 {
   "price": "Precio según tu país",
   "currency": "",
-  "paymentLink": "",
+  "paymentLink": "https://sites.google.com/view/kratopos/buy-now",
   "fallbackLink": "https://sites.google.com/view/kratopos/buy-now"
 }
