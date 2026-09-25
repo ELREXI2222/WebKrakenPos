@@ -58,12 +58,12 @@ h1 {
 /* ===== Vista previa deslizante ===== */
 
 .preview {
-    /* Rompe el ancho de .container (760px) para que las capturas se vean
-       grandes; se centra con transform porque los margenes auto no centran
-       cuando el ancho supera al contenedor */
+    /* Ancho del carrusel: 650px (un 35% menos que los 1000px anteriores).
+       Se centra con transform porque left:50% + translateX(-50%) centra
+       siempre, tanto si el ancho supera a .container (760px) como si no */
     position: relative;
     left: 50%;
-    width: min(1000px, 100vw - 40px);
+    width: min(650px, 100vw - 40px);
     transform: translateX(-50%);
 }
 
@@ -135,8 +135,8 @@ h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +144,7 @@ h1 {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
     color: #1e293b;
-    font-size: 26px;
+    font-size: 22px;
     line-height: 1;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
