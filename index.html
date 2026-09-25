@@ -6,6 +6,7 @@
     <title>Krato POS - Punto de Venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/preview-slider.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ58CQMGEG"></script>
@@ -63,6 +64,7 @@
 <a id="btn-descarga" 
    class="btn primary" 
    href="https://drive.google.com/file/d/1fUv4DmovhQUTRlB9CQ8nlZ5xuALlj7_L/view?usp=sharing" 
+   target="_blank"
    rel="noopener noreferrer">
    ⬇ Descargar Krato POS v1.0.27
 </a>
@@ -72,9 +74,59 @@
             <p class="note">Windows 10 / 11 • Instalador oficial</p>
         </header>
 
-        <!-- IMAGEN PREVIEW -->
-        <section class="preview">
-            <img src="resources/Imagenes/KratoPos-v1.5.0/kratoPos-home.png" alt="Vista del sistema Krato POS">
+        <!-- VISTA PREVIA DEL SISTEMA -->
+        <section class="preview" aria-labelledby="preview-title">
+            <h2 id="preview-title">Así se ve Krato POS</h2>
+
+            <div class="slider" id="preview-slider" role="region"
+                 aria-roledescription="carrusel" aria-label="Vistas previas del sistema Krato POS">
+
+                <div class="slider-viewport">
+                    <div class="slider-track" tabindex="0" aria-live="polite">
+
+                        <figure class="slide is-active">
+                            <img src="resources/Imagenes/Imagenes-krato-pos/caja-wifi-celular.webp"
+                                 alt="Punto de venta Krato POS en un mostrador: monitor con el sistema, impresora de tickets, cajón de dinero, lector de código de barras y la app móvil conectada por WiFi"
+                                 width="1280" height="720" fetchpriority="high" decoding="async">
+                            <figcaption>Tu caja y tu celular, sincronizados por WiFi</figcaption>
+                        </figure>
+
+                        <figure class="slide">
+                            <img src="resources/Imagenes/Imagenes-krato-pos/sistema-pagina-principal-ventas.webp"
+                                 alt="Pantalla principal de ventas de Krato POS: buscador de productos, tres ventas abiertas, acceso rápido a productos favoritos y total a cobrar"
+                                 width="1280" height="720" loading="lazy" decoding="async">
+                            <figcaption>Cobra en segundos: búsqueda, favoritos y ventas múltiples</figcaption>
+                        </figure>
+
+                        <figure class="slide">
+                            <img src="resources/Imagenes/Imagenes-krato-pos/reportes.webp"
+                                 alt="Módulo de reportes de Krato POS: gráfica de ventas contra ganancia, participación por categoría, productos más vendidos y stock crítico"
+                                 width="1280" height="720" loading="lazy" decoding="async">
+                            <figcaption>Reportes claros: ventas, ganancia y stock crítico</figcaption>
+                        </figure>
+
+                        <figure class="slide">
+                            <img src="resources/Imagenes/Imagenes-krato-pos/vista-configuracion-sistema.webp"
+                                 alt="Pantalla de configuración de Krato POS: puerto de la báscula, marca y velocidad de transmisión, ticket, fiscal y respaldos"
+                                 width="1280" height="720" loading="lazy" decoding="async">
+                            <figcaption>Configura báscula, ticket y respaldos a tu medida</figcaption>
+                        </figure>
+
+                    </div>
+
+                    <button class="slider-nav prev" type="button" aria-label="Vista anterior">&#8249;</button>
+                    <button class="slider-nav next" type="button" aria-label="Vista siguiente">&#8250;</button>
+                </div>
+
+                <div class="slider-dots">
+                    <button type="button" aria-current="true" aria-label="Ir a la vista 1 de 4"></button>
+                    <button type="button" aria-label="Ir a la vista 2 de 4"></button>
+                    <button type="button" aria-label="Ir a la vista 3 de 4"></button>
+                    <button type="button" aria-label="Ir a la vista 4 de 4"></button>
+                </div>
+            </div>
+
+            <p class="note">Capturas reales del sistema · Krato POS v1.0.27</p>
         </section>
 
         <!-- DESCRIPCIÓN -->
@@ -91,15 +143,15 @@
             <h2>🎥 Mira Krato POS en acción</h2>
 
             <div class="video-grid">
-                <a href="https://www.youtube.com/watch?v=TU_VIDEO_1" target="_blank">
+                <a href="https://www.youtube.com/watch?v=TU_VIDEO_1" target="_blank" rel="noopener">
                     ▶ Introducción al sistema
                 </a>
 
-                <a href="https://www.youtube.com/watch?v=TU_VIDEO_2" target="_blank">
+                <a href="https://www.youtube.com/watch?v=TU_VIDEO_2" target="_blank" rel="noopener">
                     ▶ Registro de ventas
                 </a>
 
-                <a href="https://www.youtube.com/watch?v=TU_VIDEO_3" target="_blank">
+                <a href="https://www.youtube.com/watch?v=TU_VIDEO_3" target="_blank" rel="noopener">
                     ▶ Control de caja
                 </a>
             </div>
