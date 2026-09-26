@@ -5,6 +5,14 @@
    definido en css/styles.css (swipe nativo en móvil). Este
    archivo solo añade flechas, puntos, teclado, autoplay y el
    evento GA4 de navegación.
+
+   Autoplay: avanza una captura cada 3 s mientras la sección está
+   a la vista. Se pausa al pasar el mouse, al enfocar con el
+   teclado, si la pestaña no está visible y, sobre todo, si el
+   visitante navega a mano (flechas, puntos, teclado, swipe o
+   toque): en ese caso deja de girar para no quitarle la captura
+   que eligió, y solo retoma el giro si la sección sale de la
+   vista y vuelve a entrar.
    ============================================================ */
 (function () {
     'use strict';
@@ -20,7 +28,7 @@
 
     if (!track || slides.length < 2) return;
 
-    var AUTOPLAY_MS = 7000;
+    var AUTOPLAY_MS = 3000;         /* 3 s por captura (pedido del cliente) */
     var SCROLL_TOLERANCE = 2;       /* px de margen para dar por alcanzado el destino */
     var SCROLL_SAFETY_MS = 2500;    /* red de seguridad si el scroll nunca llega */
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -34,6 +42,7 @@
     var hovering = false;
     var inView = true;
     var paused = false;
+    var manualHold = false;         /* el usuario navego a mano: no avanzar solo */
 
     /* Posición real de cada slide dentro de la pista */
     function offsetOf(index) {
@@ -102,13 +111,25 @@
 
         setActive(current);
 
-        if (userAction) trackEvent(current);
+        if (userAction) {
+            holdAutoplay();
+            trackEvent(current);
+        }
+    }
+
+    /* Navegación manual (flechas, puntos, teclado, swipe o toque): el carrusel
+       deja de girar solo para no quitarle al visitante la captura que eligió.
+       Vuelve a girar cuando la sección sale de la vista y entra de nuevo. */
+    function holdAutoplay() {
+        manualHold = true;
+        stopAutoplay();
     }
 
     /* El usuario tomó el control: dejamos de seguir el scroll programático */
     function userTookOver() {
         programmatic = false;
         window.clearTimeout(safetyId);
+        holdAutoplay();
     }
 
     /* Sincroniza puntos y slide activo cuando el usuario desliza a mano */
@@ -212,6 +233,7 @@
             inView &&
             !hovering &&
             !paused &&
+            !manualHold &&
             !document.hidden;
     }
 
@@ -284,6 +306,9 @@
                 startAutoplay();
             } else {
                 stopAutoplay();
+                /* Al salir de la vista se olvida la pausa manual: si el
+                   visitante vuelve a la sección, el carrusel gira otra vez */
+                manualHold = false;
             }
         }, { threshold: 0.35 }).observe(slider);
     }
