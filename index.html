@@ -5,7 +5,41 @@
     <meta charset="UTF-8">
     <title>Krato POS - Punto de Venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=20260925-3">
+
+    <!-- ================= METADATOS =================
+         og:url y og:image llevan URL absoluta a propósito: los crawlers
+         (WhatsApp, Facebook, X) no resuelven rutas relativas. El día que
+         el sitio tenga dominio propio se cambian SOLO esas dos líneas.
+         ============================================ -->
+    <meta name="description"
+          content="Krato POS es un punto de venta para Windows 10 y 11: cobra, controla inventario y cierra caja sin internet ni mensualidades. Descarga el instalador oficial.">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Krato POS">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:url" content="https://elrexi2222.github.io/WebKrakenPos/">
+    <meta property="og:title" content="Krato POS - Punto de venta sin mensualidades">
+    <meta property="og:description"
+          content="Cobra, controla tu inventario y cierra caja desde tu propia PC. Funciona sin internet y sin suscripciones. Instalador oficial para Windows 10 y 11.">
+    <meta property="og:image" content="https://elrexi2222.github.io/WebKrakenPos/resources/Imagenes/KratoPos-v1.5.0/kratoPos-home.png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="Pantalla de caja de Krato POS con el buscador de productos y el total de la venta">
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Krato POS - Punto de venta sin mensualidades">
+    <meta name="twitter:description"
+          content="Cobra, controla tu inventario y cierra caja desde tu propia PC. Funciona sin internet y sin suscripciones. Instalador oficial para Windows 10 y 11.">
+    <meta name="twitter:image" content="https://elrexi2222.github.io/WebKrakenPos/resources/Imagenes/KratoPos-v1.5.0/kratoPos-home.png">
+
+    <!-- Iconos (favicon cuadrado recortado del logo) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="resources/Imagenes/KratoPos-v1.5.0/favicon.png">
+    <link rel="apple-touch-icon" href="resources/Imagenes/KratoPos-v1.5.0/favicon.png">
+
+    <link rel="stylesheet" href="css/styles.css?v=20260925-4">
     <script src="js/preview-slider.js?v=20260925-2" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ58CQMGEG"></script>
@@ -27,50 +61,21 @@
             <h1>Krato POS</h1>
             <p class="subtitle">Control total de tu negocio. Sin mensualidades.</p>
 
-            <section class="trust-first">
-                <h2>🔍 ¿Desconfías del .exe? Hazlo.</h2>
-
-                <p>
-                    No pasa nada. <strong>Estás en tu derecho.</strong><br>
-                    Krato POS es software legítimo y eres libre de analizar el archivo
-                    con el antivirus que quieras.
-                </p>
-
-                <ul>
-                    <li>✔ Puedes subir el instalador a <strong>VirusTotal</strong></li>
-                    <li>✔ Analizarlo con <strong>Windows Defender</strong></li>
-                    <li>✔ Usar antivirus gratuitos como:
-                        <strong>Avast, Bitdefender Free, Kaspersky Free</strong>
-                    </li>
-                </ul>
-
-                <p class="dev-warning">
-                    ⚠️ <strong>Advertencia honesta:</strong><br>
-                    Windows suele ser <em>castroso</em> con desarrolladores nuevos.
-                    Si ves el mensaje <strong>“Windows protegió su PC”</strong>,
-                    no es porque sea un virus, sino porque aún no pagamos
-                    un certificado de firma digital carísimo.
-                </p>
-
-                <p class="final-note">
-                    Krato POS <strong>NO roba datos</strong>, <strong>NO instala cosas ocultas</strong>
-                    y <strong>NO se conecta a servidores raros</strong>.
-                    Es un sistema local para tu negocio. Punto.
-                </p>
-            </section>
-
-
-<a id="btn-descarga" 
-   class="btn primary" 
-   href="https://drive.google.com/file/d/1fUv4DmovhQUTRlB9CQ8nlZ5xuALlj7_L/view?usp=sharing" 
-   target="_blank"
-   rel="noopener noreferrer">
-   ⬇ Descargar Krato POS v1.0.27
-</a>
-
-
+            <a id="btn-descarga"
+               class="btn primary"
+               href="https://drive.google.com/file/d/1fUv4DmovhQUTRlB9CQ8nlZ5xuALlj7_L/view?usp=sharing"
+               target="_blank"
+               rel="noopener noreferrer">
+               ⬇ Descargar Krato POS v1.0.27
+            </a>
 
             <p class="note">Windows 10 / 11 • Instalador oficial</p>
+
+            <p class="nota-firma">
+                🔍 <strong>¿Windows mostró una advertencia?</strong><br>
+                Es normal cuando una aplicación todavía no cuenta con firma digital reconocida.
+                Krato POS aún no la tiene, así que Windows avisa por precaución.
+            </p>
         </header>
 
         <!-- VISTA PREVIA DEL SISTEMA -->
@@ -159,15 +164,11 @@
         <!-- SEGURIDAD -->
         <section class="security">
             <h2>🛡️ Instalación segura</h2>
-            <p>
-                Krato POS no contiene virus ni malware.
-                Windows puede mostrar una advertencia por no estar firmado aún.
-            </p>
+            <p>Software local: se instala en tu equipo y no necesita cuenta.</p>
 
             <ul>
-                <li>✔ Verificado con antivirus</li>
-                <li>✔ Sin procesos ocultos</li>
-                <li>✔ No roba información</li>
+                <li>✔ Funciona sin internet</li>
+                <li>✔ Sin mensualidades ni suscripciones</li>
             </ul>
         </section>
 

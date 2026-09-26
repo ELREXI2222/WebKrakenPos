@@ -55,6 +55,15 @@ h1 {
     color: #95a5a6;
 }
 
+/* Aviso de Windows: se explica una sola vez, sin nombrar antivirus */
+.nota-firma {
+    max-width: 560px;
+    margin: 18px auto 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #64748b;
+}
+
 /* ===== Vista previa deslizante ===== */
 
 .preview {
@@ -252,79 +261,6 @@ footer {
     color: #94a3b8;
 }
 
-/*css para la seccion trust-first */
-
-.trust-first {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    text-align: left;
-}
-
-.trust-first h2 {
-    margin-top: 0;
-    color: #0f172a;
-}
-
-.trust-first ul {
-    padding-left: 20px;
-    margin: 15px 0;
-}
-
-.trust-first li {
-    margin-bottom: 8px;
-}
-
-.dev-warning {
-    margin-top: 20px;
-    background: #fff7ed;
-    border-left: 4px solid #f97316;
-    padding: 12px;
-    font-size: 14px;
-}
-
-.final-note {
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-
-.price-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 20px 0;
-}
-
-.price-card.pro {
-    border: 2px solid #2563eb;
-}
-
-.price-card h3 {
-    margin-top: 0;
-}
-
-.price-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.price-card li {
-    margin: 8px 0;
-}
-
-.price {
-    font-size: 26px;
-    font-weight: 800;
-    margin-top: 15px;
-}
-
-.qr {
-    margin-top: 25px;
-}
 
 /* ===== CTA de descarga siempre visible ===== */
 
