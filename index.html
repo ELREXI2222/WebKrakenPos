@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Krato POS - Punto de Venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=20260925-2">
+    <link rel="stylesheet" href="css/styles.css?v=20260925-3">
     <script src="js/preview-slider.js?v=20260925-2" defer></script>
     <!-- Google tag (gtag.js) -->
     <!-- Google tag (gtag.js) -->
@@ -176,6 +176,60 @@
             <p>© 2025 Krato POS • Desarrollado por ELREXI2222</p>
         </footer>
     </main>
+    <!-- CTA fijo: mantiene el botón de descarga a la vista durante todo el scroll -->
+    <div class="cta-fijo" id="cta-fijo">
+        <a class="btn primary cta-fijo-btn"
+           data-descarga
+           href="https://drive.google.com/file/d/1fUv4DmovhQUTRlB9CQ8nlZ5xuALlj7_L/view?usp=sharing"
+           target="_blank"
+           rel="noopener noreferrer">
+            ⬇ Descargar Krato POS v1.0.27
+        </a>
+    </div>
+
+    <script>
+      /* El CTA fijo aparece en cuanto el botón del hero sale de la pantalla y
+         se oculta al volver al inicio, así nunca hay dos botones repetidos */
+      (function () {
+        var cta = document.getElementById('cta-fijo');
+        var ancla = document.getElementById('btn-descarga');
+
+        if (!cta || !ancla) return;
+
+        var visible = false;
+
+        function pintar(mostrar) {
+          if (mostrar === visible) return;
+          visible = mostrar;
+          cta.classList.toggle('is-visible', mostrar);
+        }
+
+        if ('IntersectionObserver' in window) {
+          new window.IntersectionObserver(function (entradas) {
+            pintar(!entradas[0].isIntersecting);
+          }, { threshold: 0 }).observe(ancla);
+        } else {
+          /* Respaldo para navegadores antiguos: se revisa al hacer scroll */
+          window.addEventListener('scroll', function () {
+            pintar(window.scrollY > ancla.offsetTop + ancla.offsetHeight);
+          }, { passive: true });
+        }
+
+        /* Mismo evento GA4 que el botón principal, para no perder descargas */
+        Array.prototype.forEach.call(document.querySelectorAll('[data-descarga]'), function (boton) {
+          boton.addEventListener('click', function () {
+            gtag('event', 'descarga_instalador', {
+              'event_category': 'software',
+              'event_label': 'Krato POS v1.5.0',
+              'value': 0
+            });
+            console.log('Evento de descarga enviado a GA4');
+          });
+        });
+      })();
+    </script>
+
+
 
             <script>
           document.getElementById('btn-descarga').addEventListener('click', function() {

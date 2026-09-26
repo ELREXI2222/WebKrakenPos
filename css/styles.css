@@ -325,3 +325,62 @@ footer {
 .qr {
     margin-top: 25px;
 }
+
+/* ===== CTA de descarga siempre visible ===== */
+
+/* Reserva el alto de la barra fija para que no tape el pie de página */
+body {
+    padding-bottom: 96px;
+}
+
+.cta-fijo {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.94);
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -6px 18px rgba(15, 23, 42, 0.08);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+
+    /* Oculto mientras el botón del hero siga en pantalla. visibility (no solo
+       opacity) lo saca del orden de tabulación, así el teclado no lo alcanza */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(110%);
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.cta-fijo.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s;
+}
+
+.cta-fijo .btn {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 0;
+    padding: 13px 26px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+@media (max-width: 640px) {
+    .cta-fijo .btn {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta-fijo {
+        transition: none;
+    }
+}
