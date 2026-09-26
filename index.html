@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/styles.css?v=20260925-3">
     <script src="js/preview-slider.js?v=20260925-2" defer></script>
     <!-- Google tag (gtag.js) -->
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ58CQMGEG"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -176,32 +175,39 @@
             <p>© 2025 Krato POS • Desarrollado por ELREXI2222</p>
         </footer>
     </main>
-    <!-- CTA fijo: mantiene el botón de descarga a la vista durante todo el scroll -->
-    <div class="cta-fijo" id="cta-fijo">
-        <a class="btn primary cta-fijo-btn"
-           data-descarga
-           href="https://drive.google.com/file/d/1fUv4DmovhQUTRlB9CQ8nlZ5xuALlj7_L/view?usp=sharing"
-           target="_blank"
-           rel="noopener noreferrer">
-            ⬇ Descargar Krato POS v1.0.27
-        </a>
-    </div>
+    <!-- ================= BARRA FIJA DE DESCARGA =================
+         Aquí NO se repite el enlace ni el texto: al cargar, el script
+         copia el botón principal (#btn-descarga) dentro de esta barra.
+         El día que cambies el enlace de descarga, se cambia SOLO ahí.
+         ========================================================= -->
+    <div class="cta-fijo" id="cta-fijo" aria-hidden="true"></div>
 
     <script>
-      /* El CTA fijo aparece en cuanto el botón del hero sale de la pantalla y
-         se oculta al volver al inicio, así nunca hay dos botones repetidos */
+      /* ================ DESCARGA SIEMPRE VISIBLE ================
+         Fuente única del enlace, del texto y de la versión: el botón
+         principal (#btn-descarga). Esta barra aparece cuando ese botón
+         sale de la pantalla y se oculta al volver arriba, así nunca se
+         ven dos botones de descarga a la vez. */
       (function () {
         var cta = document.getElementById('cta-fijo');
         var ancla = document.getElementById('btn-descarga');
 
         if (!cta || !ancla) return;
 
+        /* 1) Copia del botón principal dentro de la barra fija */
+        var botonFijo = ancla.cloneNode(true);
+        botonFijo.removeAttribute('id');          // el id se queda en el original
+        botonFijo.classList.add('cta-fijo-btn');
+        cta.appendChild(botonFijo);
+
+        /* 2) Mostrar u ocultar según el botón principal esté o no en pantalla */
         var visible = false;
 
         function pintar(mostrar) {
           if (mostrar === visible) return;
           visible = mostrar;
           cta.classList.toggle('is-visible', mostrar);
+          cta.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
         }
 
         if ('IntersectionObserver' in window) {
@@ -215,8 +221,8 @@
           }, { passive: true });
         }
 
-        /* Mismo evento GA4 que el botón principal, para no perder descargas */
-        Array.prototype.forEach.call(document.querySelectorAll('[data-descarga]'), function (boton) {
+        /* 3) Un solo registro de GA4 para los dos botones de descarga */
+        Array.prototype.forEach.call([ancla, botonFijo], function (boton) {
           boton.addEventListener('click', function () {
             gtag('event', 'descarga_instalador', {
               'event_category': 'software',
@@ -228,19 +234,6 @@
         });
       })();
     </script>
-
-
-
-            <script>
-          document.getElementById('btn-descarga').addEventListener('click', function() {
-            gtag('event', 'descarga_instalador', {
-              'event_category': 'software',
-              'event_label': 'Krato POS v1.5.0',
-              'value': 0
-            });
-            console.log('Evento de descarga enviado a GA4');
-          });
-        </script>
 
     
 </body>
